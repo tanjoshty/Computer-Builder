@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import java.net.*?>
+
+<VBox fx:controller="controller.ErrorController" xmlns:fx="http://javafx.com/fxml/1" alignment="center" prefWidth="350" spacing="10" >
+    <Text text="Invalid price entered."/>
+    <Button text="Okay" onAction="#handleClose"/>
+</VBox>
+

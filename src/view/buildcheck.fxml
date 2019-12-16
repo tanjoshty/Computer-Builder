@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.text.*?>
+
+<VBox fx:controller="controller.CheckBuildController" xmlns:fx="http://javafx.com/fxml/1" alignment="CENTER" prefWidth="350" >
+    <Text fx:id="valid" />
+    <Text fx:id="empty" />
+    <Button text="Okay" onAction="#handleOkay"/>
+</VBox>
+

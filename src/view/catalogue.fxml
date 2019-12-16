@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.text.*?>
+
+<VBox fx:controller="controller.CatalogueController" xmlns:fx="http://javafx.com/fxml/1" spacing="10" >
+        <TableView fx:id="catalogueTv" items="${controller.catalogue.currentView}">
+            <placeholder><Label text="No results found."/></placeholder>
+            <columns>
+                <TableColumn fx:id="typeClm" text="Type"></TableColumn>
+                <TableColumn fx:id="nameClm" text="Name"></TableColumn>
+                <TableColumn fx:id="priceClm" text="Price"></TableColumn>
+            </columns>
+        </TableView>
+        
+        <Text text="Filters" styleClass="h2" />
+        <GridPane alignment="center" hgap="10" vgap="10">
+            <Text text="Type:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <TextField fx:id="filterTypeTf" GridPane.columnIndex="1" GridPane.rowIndex="0" GridPane.columnSpan="3" onKeyTyped="#filter" />
+            <Text text="Price Range:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <TextField fx:id="filterMinTf" GridPane.columnIndex="1" GridPane.rowIndex="1" onKeyTyped="#filter"/>
+            <Text text="to" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+            <TextField fx:id="filterMaxTf" GridPane.columnIndex="3" GridPane.rowIndex="1" onKeyTyped="#filter"/>
+        </GridPane>
+        <Button fx:id="addToBuildBtn" disable="true" text="Add Selected to Build" onAction="#handleAddToBuild"/>
+        <Button text="Add New Part to Catalogue" onAction="#handleAdd" />
+        <Button fx:id="removeFromCat" disable="true" text="Remove Selected from Catalogue" onAction="#handleRemoveFromCat"/>
+        <Button text="Close" onAction="#handleClose"/>
+	<stylesheets>
+		<URL value="@computerbuilder.css" />
+	</stylesheets>
+
+</VBox>
+

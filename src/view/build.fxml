@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import java.net.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+
+<VBox fx:controller="controller.BuildController" xmlns:fx="http://javafx.com/fxml/1" spacing="10">
+    
+    <TableView fx:id="buildTv" prefWidth="470" items="${controller.build.parts}">
+        <placeholder><Label text="No parts in current build."/></placeholder>
+        <columns>
+            <TableColumn fx:id="buildTypeClm" text="Type"></TableColumn>
+            <TableColumn fx:id="buildNameClm" text="Name"></TableColumn>
+            <TableColumn fx:id="buildPriceClm" text="Price"></TableColumn>
+        </columns>
+    </TableView>
+    <HBox alignment="CENTER_RIGHT">
+        <Text fx:id="totalTxt"/>
+    </HBox>
+    <Button text="Check Build" onAction="#handleCheckBuild" />
+    <Button fx:id="removeFromBuildBtn" text="Remove Selected from Build" disable="true" onAction="#handleRemove"/>
+    <Button text="Close" onAction="#handleClose"/>
+
+    <stylesheets>
+            <URL value="@computerbuilder.css" />
+    </stylesheets>
+</VBox>
+
